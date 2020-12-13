@@ -8,7 +8,7 @@ http://www.lockon.co.jp/
 For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
 #}
-{% extends 'default_frame.twig' %}
+{% extends 'product_frame.twig' %}
 {% set body_class = 'product_page' %}
 {% block main %}
 <section class="single_blog_area section-padding-80">
@@ -42,6 +42,7 @@ file that was distributed with this source code.
                         <div class="widget-title">
                                 <h5>Blog</h5>
                             </div>
+						{% set posts = getPosts() %}
                          {% for post in posts %}  
                             <div class="single-populer-post">
                                 <div class="post-contents">

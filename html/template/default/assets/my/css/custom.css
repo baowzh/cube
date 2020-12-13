@@ -49,6 +49,7 @@ span.total-quantity{
 }
 .fancy-blog-area .container .single-blog-area img{
     width: 100%;
+    height: 180px;
 }
 
 .fancy-blog-area .container:not(:first-of-type)::before{
@@ -214,4 +215,8 @@ span.total-quantity{
 
 .overflow-hidden{
     overflow: hidden;
+}
+
+.money{
+    color: #F44336;
 }
