@@ -220,12 +220,15 @@ span.total-quantity{
 .money{
     color: #F44336;
 }
-.single-blog-area .blog-content{
+.index .single-blog-area .blog-content{
     padding-top: 10px;
 }
-.single-blog-area .blog-content h5{
+.index .single-blog-area .blog-content h5{
     height: 70px;
 }
-.single-blog-area .blog-content h5 a{
+.index .single-blog-area .blog-content h5 a{
     font-size: 10px;
+}
+.page_product_list .single_blog_area{
+    width: 100%
 }
