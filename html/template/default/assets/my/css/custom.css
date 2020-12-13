@@ -44,8 +44,10 @@ span.total-quantity{
 .fancy-blog-area{
     width: 100%;
 }
-.fancy-blog-area .container-header{
-    margin-bottom: 40px;
+.fancy-blog-area .container-header {
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #E0E0E0;
+    padding-bottom: 20px;
 }
 .fancy-blog-area .container .single-blog-area img{
     width: 100%;
@@ -229,6 +231,6 @@ span.total-quantity{
 .index .single-blog-area .blog-content h5 a{
     font-size: 10px;
 }
-.page_product_list .single_blog_area{
+.single_blog_area{
     width: 100%
 }
