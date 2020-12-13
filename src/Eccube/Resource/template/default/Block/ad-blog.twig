@@ -1,0 +1,70 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+{% set posts = getPosts() %}
+ <div class="fancy-hero-area bg-img bg-overlay animated-img" style="background-image: url({{ asset('assets/img/top-banner.jpg') }});">
+			<div class="container h-100">
+				<div class="row h-100 align-items-center">
+					<div class="col-12">
+						<div class="fancy-hero-content text-center">
+							<h2>Esoft-shop</h2>
+							<h3 class="text-white">「より一層活躍する働き方」を「安心安全な環境で実現」するMicrosoftソリューション専門チャンネル</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="fancy-top-features-area bg-gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						{% set posts = getPosts() %}
+						<div class="fancy-top-features-content bg-white">
+							<div class="row no-gutters">
+								{% for index,post in posts %}  
+									{% if index < 3 %}
+									<div class="col-12 col-md-4">
+										<div class="single-top-feature feature-content">
+										<h5 title="{{post.post_title}}"><i class="fa fa-envira" aria-hidden="true"></i> <a href="{{ url('post_detail', {'id': post.ID}) }}">{{post.post_title}}</a></h5>
+											<p>{{post.post_content|striptags}}</p>
+										</div>
+									</div>
+									{% endif %}
+							{% endfor %}
+							</div>
+							<a class="show-more" href="post/lists?size=10&index=1">もっと<i class="ti-angle-double-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section class="fancy-about-us-area bg-gray holder"></section>
+		<section class="fancy-testimonials-area  section-padding-0-0">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="testimonials-slides owl-carousel">
+							<div class="single-testimonial d-md-flex align-items-center">
+								<a href="http://www.office-soft.jp/products/detail/3" target="_blank" title="">
+									<img src="{{ asset('assets/img/1J4335U4_lit.jpg') }}" alt="">
+									<span>Microsoft Office 2019</span>
+								</a> 
+							</div>
+							<div class="single-testimonial d-md-flex align-items-center">
+								<a href="http://www.office-soft.jp/products/detail/3" target="_blank" title="">
+									<img src="{{ asset('assets/img/1J4335U4_lit.jpg') }}" alt="">
+									<span>Microsoft Office 2019</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>

@@ -337,4 +337,22 @@ class ProductRepository extends AbstractRepository
 
         return $this->queries->customize(QueryKey::PRODUCT_SEARCH_ADMIN, $qb, $searchData);
     }
+    public function getProductsByGategorys(array $categoryIds) {
+    	if (count ( $categoryIds ) < 1) {
+    		return [ ];
+    	}
+    	$qb = $this->createQueryBuilder ( 'p' )->andWhere ( 'p.Status = 1' );
+    	$qb->innerJoin ( 'p.ProductCategories', 'pct' )->innerJoin ( 'pct.Category', 'c' )->andWhere ( $qb->expr()->in('pct.Category', ':Categories'))
+    	->setParameter('Categories', $categoryIds);
+    	$categoryJoin = true;
+    	$qb->addOrderBy ( 'p.id', 'DESC' );
+    	$products = $qb->getQuery()->getResult ();
+    	$allProducts=array();
+    	for ($x=0; $x<sizeof($products); $x++) {
+    		$id = $products[$x]->getId();
+    		$producti=$this->findWithSortedClassCategories($id);
+    		array_push($allProducts,$producti);
+    	}
+    	return $allProducts;
+    }
 }

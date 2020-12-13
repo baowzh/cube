@@ -69,6 +69,7 @@
 		{% if Layout.Header %}
 			{{ include('block.twig', {'Blocks': Layout.Header}) }}
 		{% endif %}
+		<!--
 		<div class="fancy-hero-area bg-img bg-overlay animated-img" style="background-image: url({{ asset('assets/img/top-banner.jpg') }});">
 			<div class="container h-100">
 				<div class="row h-100 align-items-center">
@@ -81,7 +82,9 @@
 				</div>
 			</div>
 		</div>
+		-->
 		<!-- ***** Top Feature Area Start ***** -->
+		<!--
 		<div class="fancy-top-features-area bg-gray">
 			<div class="container">
 				<div class="row">
@@ -100,12 +103,13 @@
 									{% endif %}
 							{% endfor %}
 							</div>
-							<a class="show-more" href="http://localhost/eccube-4/post/lists?size=10&index=1">もっと<i class="ti-angle-double-right"></i></a>
+							<a class="show-more" href="post/lists?size=10&index=1">もっと<i class="ti-angle-double-right"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		
 		<section class="fancy-about-us-area bg-gray holder"></section>
 		<section class="fancy-testimonials-area  section-padding-0-0">
 			<div class="container">
@@ -129,6 +133,10 @@
 				</div>
 			</div>
 		</section>
+		-->
+	    {% if Layout.ContentsTop %}      
+            {{ include('block.twig', {'Blocks': Layout.ContentsTop}) }}     
+        {% endif %}
 		{% if Layout.MainTop %}
 			{{ include('block.twig', {'Blocks': Layout.MainTop}) }}
 		{% endif %}
@@ -137,6 +145,7 @@
 		{% if Layout.Footer %}
 			{{ include('block.twig', {'Blocks': Layout.Footer}) }}
 		{% endif %}
+		
     </body>
     <script src="{{ asset('assets/my/js/bootstrap/popper.min.js')}}"></script>
     <script src="{{ asset('assets/my/js/bootstrap/bootstrap.min.js')}}"></script>
